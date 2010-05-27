@@ -1,0 +1,23 @@
+%h1 Listing victim_urls
+
+%table
+  %tr
+    %th Name
+    %th Url
+    %th Query
+    %th
+    %th
+    %th
+
+  - @victim_urls.each do |victim_url|
+    %tr
+      %td= victim_url.name
+      %td= victim_url.url
+      %td= victim_url.query
+      %td= link_to 'Show', victim_url
+      %td= link_to 'Edit', edit_victim_url_path(victim_url)
+      %td= link_to 'Destroy', victim_url, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New victim_url', new_victim_url_path

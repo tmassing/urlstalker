@@ -1,0 +1,2 @@
+module VictimUrlsHelper
+end

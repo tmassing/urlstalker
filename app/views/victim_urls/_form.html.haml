@@ -1,0 +1,19 @@
+= form_for @victim_url do |f|
+  -if @victim_url.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@victim_url.errors.count, "error")} prohibited this victim_url from being saved:"
+      %ul
+        - @victim_url.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :query
+    = f.text_field :query
+  .actions
+    = f.submit 'Save'
