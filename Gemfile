@@ -34,5 +34,5 @@ group :development, :test do
 end
 
 group :test do
-   gem 'shoulda'
+   gem 'shoulda', :git => 'git://github.com/thoughtbot/shoulda.git', :branch => "rails3", :require => nil
 end
