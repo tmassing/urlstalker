@@ -9,7 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
 gem 'mechanize'
 gem 'rails3-generators'
-
+gem "compass", ">= 0.10.1"
 
 # Use unicorn as the web server
 # gem 'unicorn'

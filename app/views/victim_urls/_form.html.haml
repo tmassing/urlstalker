@@ -15,5 +15,11 @@
   .field
     = f.label :query
     = f.text_field :query
+  .field
+    = f.label :links_only
+    = f.check_box :links_only
+  .field
+    = f.label :content_only
+    = f.check_box :content_only
   .actions
     = f.submit 'Save'

@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(:version => 20100527200126) do
     t.string   "name"
     t.string   "url"
     t.string   "query"
+    t.boolean  "links_only",   :default => false
+    t.boolean  "content_only", :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

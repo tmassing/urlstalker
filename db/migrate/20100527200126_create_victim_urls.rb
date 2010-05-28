@@ -4,7 +4,8 @@ class CreateVictimUrls < ActiveRecord::Migration
       t.string :name
       t.string :url
       t.string :query
-
+      t.boolean :links_only, :default => false
+      t.boolean :content_only, :default => false
       t.timestamps
     end
   end

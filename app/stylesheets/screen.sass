@@ -1,0 +1,37 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset
+// To configure blueprint, edit the partials/_base.sass file.
+@import partials/base
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
+// Import the non-default scaffolding module.
+@import blueprint/scaffolding
+@import "blueprint/buttons"
+@import "blueprint/link-icons"
+
+// Generate the blueprint framework according to your configuration:
++blueprint
++link-icons
+
+
+@import partials/page
+
+// http://www.sohtanaka.com/web-design/styling-pre-tags-with-css-code-block/
+pre
+  font-size: 12px
+  padding: 0
+  margin: 0
+  background: #f0f0f0
+  border-left: 1px solid #ccc
+  border-bottom: 1px solid #ccc
+  line-height: 20px
+  background: #faf8f0
+  // background: url(pre_code_bg.gif) repeat-y left top
+  width: 600px
+  overflow: auto
+  overflow-Y: hidden
+
+  code
+    margin: 0 0 0 40px
+    padding: 18px 0
+    display: block

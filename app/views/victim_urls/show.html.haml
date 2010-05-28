@@ -8,6 +8,17 @@
   %b Query:
   = @victim_url.query
 
+- if @victim_url.content_only?
+  %pre
+    = @victim_url.results
+- else
+  %pre
+    %code.html
+      = @victim_url.results
+
+
+
+
 = link_to 'Edit', edit_victim_url_path(@victim_url)
 \|
 = link_to 'Back', victim_urls_path
