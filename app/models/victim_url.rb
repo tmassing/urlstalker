@@ -5,7 +5,7 @@ class VictimUrl < ActiveRecord::Base
   validates_uniqueness_of :name
 
   def results
-    agent = WWW::Mechanize.new{ |a|
+    agent = Mechanize.new{ |a|
       a.user_agent_alias = 'Mac Safari'
     }
 
