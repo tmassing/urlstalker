@@ -16,6 +16,7 @@
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 @import "compass/utilities/lists"
 @import "blueprint/liquid"
+@import "blueprint/form"
 
 body
   +blueprint-typography(true)
@@ -74,6 +75,10 @@ body
 
   form
     +blueprint-form
+    .field, .actions
+      margin-bottom: 10px
+        
+
 
   ul.nav
     +horizontal-list

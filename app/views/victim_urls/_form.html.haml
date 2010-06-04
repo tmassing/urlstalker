@@ -5,24 +5,30 @@
       %ul
         - @victim_url.errors.full_messages.each do |msg|
           %li= msg
+  %fieldset
+    %legend
+      A Little Information About The Intended
+    .field
+      = f.label :name
+      %br
+      = f.text_field :name
+    .field
+      = f.label :url
+      %br
+      = f.text_field :url
+    .field
+      = f.label :query
+      %br
+      = f.text_field :query
+    .field
+      = f.label :email
+      %br
+      = f.text_field :email
+    .field
+      = f.check_box :content_only
+      = f.label :content_only
+    .actions
+      = f.submit 'Save' 
+      or 
+      = link_to 'Cancel', victim_urls_path
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :url
-    = f.text_field :url
-  .field
-    = f.label :query
-    = f.text_field :query
-  .field
-    = f.label :links_only
-    = f.check_box :links_only
-  .field
-    = f.label :content_only
-    = f.check_box :content_only
-  .field
-    = f.label :email
-    = f.text_field :email
-  .actions
-    = f.submit 'Save'
