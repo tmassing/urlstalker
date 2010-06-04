@@ -1,42 +1,136 @@
 // This import applies a global reset to any page that imports this stylesheet.
 @import blueprint/reset
-// To configure blueprint, edit the partials/_base.sass file.
+
+// To configure blueprint, edit the partials/base.sass file.
 @import partials/base
+
 // Import all the default blueprint modules so that we can access their mixins.
 @import blueprint
+
 // Import the non-default scaffolding module.
 @import blueprint/scaffolding
-@import "blueprint/buttons"
-@import "blueprint/link-icons"
 
-// Generate the blueprint framework according to your configuration:
-+blueprint
-+link-icons
+// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
+// +blueprint
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+@import "compass/utilities/lists"
+@import "blueprint/liquid"
+
+body
+  +blueprint-typography(true)
+  +blueprint-utilities
+  +blueprint-debug
+  +blueprint-interaction
+  +blueprint-scaffolding
+  +blueprint-liquid-grid
+  background: #FFFFFF url(/images/img01.jpg) repeat-x left top
+  #container
+    +container
+  #header, #footer
+    +column($blueprint-grid-columns)
+    height: 50px
+    margin: 0 auto 10px
+    padding-top: 10px
+  #footer
+    border-top: 1px solid #E0E0E0
+    margin-top: 10px
+    p
+      margin: 0
+      padding: 30px 0px 0px 0px
+      text-align: center
+      line-height: normal
+      font-size: 12px
+
+  #sidebar
+    // One third of the grid columns, rounding down. With 24 cols, this is 8.
+    $sidebar-columns: floor($blueprint-grid-columns / 4)
+    +column($sidebar-columns)
+  #content
+    $content-columns: ceil(3 * $blueprint-grid-columns / 4)
+    +column($content-columns, true)
+    // http://www.sohtanaka.com/web-design/styling-pre-tags-with-css-code-block/
+    pre
+      font-size: 12px
+      padding: 0
+      margin: 10px 0 0 
+      background: #f0f0f0
+      border-left: 1px solid #ccc
+      border-bottom: 1px solid #ccc
+      line-height: 20px
+      background: #faf8f0
+      overflow: auto
+      overflow-Y: hidden
+      overflow-x: auto 
+      white-space: pre-wrap /* css-3 */
+      white-space: -moz-pre-wrap !important /* Mozilla, since 1999 */
+      white-space: -pre-wrap /* Opera 4-6 */
+      white-space: -o-pre-wrap /* Opera 7 */
+      word-wrap: break-word /* Internet Explorer 5.5+ */
+      code
+        margin: 0 0 0 40px
+        padding: 18px 0
+        display: block
+
+  form
+    +blueprint-form
+
+  ul.nav
+    +horizontal-list
+    li
+      border-right: 1px solid #8E8E8E
+    a
+      display: block
+      float: left
+      margin: 0px 6px
+      padding: 6px 20px 6px 20px
+      letter-spacing: -1px
+      text-decoration: none
+      text-align: center
+      text-transform: lowercase
+      font-family: Arial, Helvetica, sans-serif
+      font-size: 12px
+      font-weight: normal
+      color: #8E8E8E
+
+      &:hover
+        text-decoration: none
+        background: #6A6A6A
+        color: #FFFFFF
+
+    .current_page_item a
+      background: #6A6A6A
+      color: #FFFFFF
 
 
-@import partials/page
+#logo
+  height: 90px
+  margin: 0 auto
 
-// http://www.sohtanaka.com/web-design/styling-pre-tags-with-css-code-block/
-pre
-  font-size: 12px
-  padding: 0
-  margin: 0
-  background: #f0f0f0
-  border-left: 1px solid #ccc
-  border-bottom: 1px solid #ccc
-  line-height: 20px
-  background: #faf8f0
-  // background: url(pre_code_bg.gif) repeat-y left top
-  // width: 600px
-  overflow: auto
-  overflow-Y: hidden
-  overflow-x: auto 
-  white-space: pre-wrap /* css-3 */
-  white-space: -moz-pre-wrap !important /* Mozilla, since 1999 */
-  white-space: -pre-wrap /* Opera 4-6 */
-  white-space: -o-pre-wrap /* Opera 7 */
-  word-wrap: break-word /* Internet Explorer 5.5+ */
-  code
-    margin: 0 0 0 40px
-    padding: 18px 0
-    display: block
+  h1
+    margin: 0px
+    line-height: normal
+    text-transform: lowercase
+    font-weight: normal
+    color: #FFFFFF
+
+  p
+    margin: 0px
+    line-height: normal
+    text-transform: lowercase
+    font-weight: normal
+    color: #FFFFFF
+    margin-top: -4px
+    text-transform: lowercase
+    font-family: Georgia, "Times New Roman", Times, serif
+    font-size: 13px
+    color: #404040
+
+  h1
+    font-size: 48px
+
+  a
+    text-decoration: none
+    color: #404040
+
+

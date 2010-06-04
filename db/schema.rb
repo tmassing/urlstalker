@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100527200126) do
+ActiveRecord::Schema.define(:version => 20100603175625) do
 
   create_table "victim_urls", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20100527200126) do
     t.boolean  "content_only", :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
 end
