@@ -21,6 +21,12 @@ class VictimUrlsController < ApplicationController
     end
   end
 
+  def preview
+    @victim_url = VictimUrl.new(params[:victim_url])
+    @victim_url.valid?
+    render :layout => "preview"
+  end
+
   # GET /victim_urls/new
   # GET /victim_urls/new.xml
   def new

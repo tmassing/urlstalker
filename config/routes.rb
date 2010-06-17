@@ -1,5 +1,9 @@
 Urlstalker::Application.routes.draw do |map|
-  resources :victim_urls
+  resources :victim_urls do
+    collection do
+      get :preview
+    end
+  end
   root :to => "victim_urls#index"
 
   # The priority is based upon order of creation:

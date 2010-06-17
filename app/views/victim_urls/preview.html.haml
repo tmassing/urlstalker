@@ -1,0 +1,12 @@
+%h1 Preview
+
+-if @victim_url.errors.any?
+  #errorExplanation
+    %h2= "#{pluralize(@victim_url.errors.count, "error")} prohibited this victim_url from being saved:"
+    %ul
+      - @victim_url.errors.full_messages.each do |msg|
+        %li= msg
+
+%pre
+  %code.html
+    = @victim_url.results unless @victim_url.errors.any?

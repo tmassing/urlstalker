@@ -35,6 +35,8 @@ module Urlstalker
       g.orm             :active_record
       g.template_engine :haml
       g.test_framework  :shoulda, :fixture => true
+      g.fallbacks[:shoulda] = :test_unit
+      g.fallbacks[:haml] = :erb
     end
 
     # Configure the default encoding used in templates for Ruby 1.9.
@@ -44,3 +46,5 @@ module Urlstalker
     config.filter_parameters += [:password]
   end
 end
+
+# Rails::Generators.fallbacks[:shoulda] = :test_unit

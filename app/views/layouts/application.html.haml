@@ -7,11 +7,14 @@
     = stylesheet_link_tag 'print.css', :media => 'print'
     = stylesheet_link_tag 'buttons.css', :media => 'screen, projection'
     = stylesheet_link_tag 'buttons.css', :media => 'screen, projection'
+    = stylesheet_link_tag '/facebox/facebox.css', :media => 'screen, projection'
     /[if lt IE 8]
       = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
     = javascript_include_tag "jquery"
     = javascript_include_tag "chili/jquery.chili-2.2"
     = javascript_include_tag "chili/recipes"
+    = javascript_include_tag "/facebox/facebox"
+    = javascript_include_tag "application"
     = csrf_meta_tag 
   %body
     #container
@@ -31,3 +34,4 @@
         %p
           Copyright (c) 2010 Eye Street Research. All rights reserved. CSS Design Based on 
           = link_to "CSS Templates", "http://www.freecsstemplates.org/"
+

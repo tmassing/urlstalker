@@ -20,13 +20,11 @@
       = f.label :query
       %br
       = f.text_field :query
+      = link_to "Preview", "#", :class => "preview"
     .field
       = f.label :email
       %br
       = f.text_field :email
-    .field
-      = f.check_box :content_only
-      = f.label :content_only
     .actions
       = f.submit 'Save' 
       or 
