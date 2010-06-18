@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta3'
+gem 'rails', '3.0.0.beta4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,6 +21,7 @@ gem "compass", ">= 0.10.1"
 # Bundle the extra gems:
 # gem 'bj'
 gem 'nokogiri', '1.4.1'
+gem 'gist', '1.1.1'
 
 # gem 'aws-s3', :require => 'aws/s3'
 
@@ -35,5 +36,5 @@ group :development, :test do
 end
 
 group :test do
-   gem 'shoulda', :git => 'git://github.com/thoughtbot/shoulda.git', :branch => "rails3", :require => nil
+   gem 'shoulda', '2.11.0', :require => nil
 end
