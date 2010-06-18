@@ -1,8 +1,8 @@
 require "mechanize"
 
 class VictimUrl < ActiveRecord::Base
-  validates :name, :url, :query, :presence => true
-  # validates_presence_of :name, :url, :query
+  # validates :name, :url, :query, :presence => true
+  validates_presence_of :name, :url, :query
   # validates_uniqueness_of :name
 
   def results

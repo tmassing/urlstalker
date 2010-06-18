@@ -3,3 +3,8 @@ one:
   name: My Test Victim
   url: http://www.google.com
   query: //a
+two:
+  id: 2
+  name: Test Victim
+  url: http://www.froogle.com
+  query: //a
