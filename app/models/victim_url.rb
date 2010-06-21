@@ -7,16 +7,8 @@ class VictimUrl < ActiveRecord::Base
   # validates :name, :url, :query, :presence => true
   validates_presence_of :name, :url, :query
   # validates_uniqueness_of :name
+  before_save :publish_gist
 
-  # before_save do |victim_url|
-  #   if victim_url.gist_id.nil?
-  #     gist = Gist.new(victim_url.name,victim_url.results)
-  #     self.gist_id = gist.publish
-  #   else
-  #     gist = Gist.new(victim_url.name,victim_url.results, victim_url.gist_id)
-  #     gist.publish
-  #   end
-  # end
 
   def results
     agent = Mechanize.new{ |a|
@@ -32,5 +24,17 @@ class VictimUrl < ActiveRecord::Base
       end
     end
     ary.join("\n")
+  end
+
+  protected
+
+  def publish_gist
+    if gist_id.nil?
+      gist = Gist.new(name,results)
+      self.gist_id = gist.publish
+    else
+      gist = Gist.new(name,results, gist_id)
+      gist.publish
+    end
   end
 end
