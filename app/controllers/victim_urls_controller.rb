@@ -86,4 +86,9 @@ class VictimUrlsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def test_mail
+    StalkerMailer.hello_email("rob.christie@eyestreet.com").deliver
+    render :text => "Sent"
+  end
 end

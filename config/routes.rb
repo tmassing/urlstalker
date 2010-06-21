@@ -2,6 +2,7 @@ Urlstalker::Application.routes.draw do |map|
   resources :victim_urls do
     collection do
       get :preview
+      get :test_mail
     end
   end
   root :to => "victim_urls#index"

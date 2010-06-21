@@ -7,19 +7,19 @@
 %p
   %b Query:
   = @victim_url.query
+- unless @victim_url.gist_id.blank?
+  %p
+    %b Gist:
+    = link_to @victim_url.gist_id, gist_url
+
 
 %ul.nav
   %li= link_to 'Edit', edit_victim_url_path(@victim_url)
   %li= link_to 'Back', victim_urls_path
 
-
-- if @victim_url.content_only?
-  %pre
+%pre
+  %code.html
     = @victim_url.results
-- else
-  %pre
-    %code.html
-      = @victim_url.results
 
 
 
