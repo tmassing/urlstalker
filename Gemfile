@@ -11,7 +11,7 @@ gem 'haml'
 gem 'mechanize'
 gem 'rails3-generators'
 gem "compass", ">= 0.10.1"
-
+gem "heroku"
 # Use unicorn as the web server
 # gem 'unicorn'
 
