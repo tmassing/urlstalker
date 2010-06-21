@@ -5,15 +5,12 @@
     %th Name
     %th Url
     %th Query
-    %th Content Only?
-    %th
 
   - @victim_urls.each do |victim_url|
     %tr
       %td= link_to victim_url.name, victim_url
       %td= link_to victim_url.url, victim_url.url, :target => "_new"
       %td= victim_url.query
-      %td= victim_url.content_only?
 
 %br
 
