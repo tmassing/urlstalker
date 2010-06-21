@@ -21,7 +21,8 @@ gem "compass", ">= 0.10.1"
 # Bundle the extra gems:
 # gem 'bj'
 gem 'nokogiri', '1.4.1'
-gem 'gist', '1.1.1'
+gem 'rest-client', '1.5.1'
+gem 'git', '1.2.5'
 
 # gem 'aws-s3', :require => 'aws/s3'
 

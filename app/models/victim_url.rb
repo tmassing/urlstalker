@@ -5,11 +5,24 @@ class VictimUrl < ActiveRecord::Base
   validates_presence_of :name, :url, :query
   # validates_uniqueness_of :name
 
+  before_save do |victim_url|
+    if victim_url.gist_id.nil?
+      gist = Gist.new(victim_url.name,victim_url.results)
+      self.gist_id = gist.publish
+    else
+      gist = Gist.new(victim_url.name,victim_url.results, victim_url.gist_id)
+      gist.publish
+    end
+  end
+
+  before_update do |victim_url|
+
+  end
+
   def results
     agent = Mechanize.new{ |a|
       a.user_agent_alias = 'Mac Safari'
     }
-
     agent.get(url)
     ary = agent.page.search(query)
     ary = ary.map do |e|
@@ -21,5 +34,4 @@ class VictimUrl < ActiveRecord::Base
     end
     ary.join("\n")
   end
-
 end

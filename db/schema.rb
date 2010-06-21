@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100603175625) do
+ActiveRecord::Schema.define(:version => 20100621025030) do
 
   create_table "victim_urls", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20100603175625) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+    t.string   "gist_id"
   end
 
 end
