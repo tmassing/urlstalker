@@ -6,6 +6,7 @@ require "gist"
 class VictimUrl < ActiveRecord::Base
   # validates :name, :url, :query, :presence => true
   validates_presence_of :name, :url, :query
+  belongs_to :user
   # validates_uniqueness_of :name
   before_save :publish_gist
 

@@ -34,6 +34,7 @@ GEM
     builder (2.1.2)
     compass (0.10.4)
       haml (>= 3.0.4)
+    configuration (1.1.0)
     devise (1.1.1)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
@@ -41,7 +42,15 @@ GEM
       abstract (>= 1.0.0)
     git (1.2.5)
     haml (3.0.16)
+    heroku (1.7.0)
+      json_pure (~> 1.2.0)
+      launchy (~> 0.3.2)
+      rest-client (~> 1.2)
     i18n (0.4.1)
+    json_pure (1.2.4)
+    launchy (0.3.7)
+      configuration (>= 0.0.5)
+      rake (>= 0.8.1)
     mail (2.2.5)
       activesupport (>= 2.3.6)
       mime-types
@@ -92,6 +101,7 @@ DEPENDENCIES
   devise (= 1.1.1)
   git (= 1.2.5)
   haml
+  heroku
   mechanize
   nokogiri (= 1.4.1)
   pg

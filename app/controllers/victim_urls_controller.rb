@@ -2,7 +2,7 @@ class VictimUrlsController < ApplicationController
   # GET /victim_urls
   # GET /victim_urls.xml
   def index
-    @victim_urls = VictimUrl.all
+    @victim_urls = current_user.victim_urls
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class VictimUrlsController < ApplicationController
   # GET /victim_urls/1
   # GET /victim_urls/1.xml
   def show
-    @victim_url = VictimUrl.find(params[:id])
+    @victim_url = current_user.victim_urls.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,7 +22,7 @@ class VictimUrlsController < ApplicationController
   end
 
   def preview
-    @victim_url = VictimUrl.new(params[:victim_url])
+    @victim_url = current_user.victim_urls.build(params[:victim_url])
     @victim_url.valid?
     render :layout => "preview"
   end
@@ -30,7 +30,7 @@ class VictimUrlsController < ApplicationController
   # GET /victim_urls/new
   # GET /victim_urls/new.xml
   def new
-    @victim_url = VictimUrl.new
+    @victim_url = current_user.victim_urls.build(params[:victim_url])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,13 +40,13 @@ class VictimUrlsController < ApplicationController
 
   # GET /victim_urls/1/edit
   def edit
-    @victim_url = VictimUrl.find(params[:id])
+    @victim_url = current_user.victim_urls.find(params[:id])
   end
 
   # POST /victim_urls
   # POST /victim_urls.xml
   def create
-    @victim_url = VictimUrl.new(params[:victim_url])
+    @victim_url = current_user.victim_urls.build(params[:victim_url])
 
     respond_to do |format|
       if @victim_url.save
@@ -62,7 +62,7 @@ class VictimUrlsController < ApplicationController
   # PUT /victim_urls/1
   # PUT /victim_urls/1.xml
   def update
-    @victim_url = VictimUrl.find(params[:id])
+    @victim_url = current_user.victim_urls.find(params[:id])
 
     respond_to do |format|
       if @victim_url.update_attributes(params[:victim_url])
@@ -78,7 +78,7 @@ class VictimUrlsController < ApplicationController
   # DELETE /victim_urls/1
   # DELETE /victim_urls/1.xml
   def destroy
-    @victim_url = VictimUrl.find(params[:id])
+    @victim_url = current_user.victim_urls.find(params[:id])
     @victim_url.destroy
 
     respond_to do |format|
