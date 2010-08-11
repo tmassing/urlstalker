@@ -1,4 +1,6 @@
 Urlstalker::Application.routes.draw do |map|
+  devise_for :users
+
   resources :victim_urls do
     collection do
       get :preview
