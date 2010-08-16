@@ -21,6 +21,10 @@
       %br
       = f.text_field :query
       = link_to "Preview", "#", :class => "preview"
+    .field
+      = f.label :visit_frequency
+      %br
+      = f.select :visit_frequency, ["daily", "hourly"]
     .actions
       = f.submit 'Save' 
       or 

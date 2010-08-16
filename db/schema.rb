@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100816172157) do
+ActiveRecord::Schema.define(:version => 20100816180009) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -34,12 +34,13 @@ ActiveRecord::Schema.define(:version => 20100816172157) do
     t.string   "name"
     t.string   "url"
     t.string   "query"
-    t.boolean  "links_only",   :default => false
-    t.boolean  "content_only", :default => false
+    t.boolean  "links_only",      :default => false
+    t.boolean  "content_only",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gist_id"
     t.integer  "user_id"
+    t.string   "visit_frequency", :default => "daily"
   end
 
 end

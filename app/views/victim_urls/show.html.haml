@@ -7,6 +7,9 @@
 %p
   %b Query:
   = @victim_url.query
+%p
+  %b Visits:
+  = @victim_url.visit_frequency
 - unless @victim_url.gist_id.blank?
   %p
     %b Gist:
