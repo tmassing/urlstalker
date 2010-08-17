@@ -36,9 +36,10 @@ class VictimUrl < ActiveRecord::Base
       self.git_sha = g.object('HEAD').sha
       self.save
     elsif self.git_sha != g.object('HEAD').sha
-      logger.info "Updated SHA...something has changed"
+      logger.info "Updating SHA...something has changed"
       self.git_sha = g.object('HEAD').sha
       self.save
+      StalkerMailer.look_whos_stalking(self).deliver
     end
   end
 
