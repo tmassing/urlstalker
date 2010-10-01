@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
         var name = $("input#victim_url_name").val();  
         var url = $("input#victim_url_url").val();  
         var query = $("input#victim_url_query").val();  
-        var dataString = 'victim_url[name]='+ name + '&victim_url[url]=' + url + '&victim_url[query]=' + query; 
+        var dataString = 'victim_url[name]='+ name + '&victim_url[url]=' + encodeURIComponent(url) + '&victim_url[query]=' + query; 
         jQuery.facebox(function($) { 
             jQuery.get('/victim_urls/preview', dataString, function(data) { jQuery.facebox(data) })
         })
