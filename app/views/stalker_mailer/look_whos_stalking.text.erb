@@ -1,3 +1,5 @@
-Your prey is restless.
-
-See your results <%= "http://gist.github.com/#{@victim_url.gist_id}"%>
+<%= @victim_url.name %> has changed.
+<br/>
+Visit the <%= link_to "prey", "#{@victim_url.url}" %> to see the changed content.
+<br/>
+See <%= link_to "the gist", "http://gist.github.com/#{@victim_url.gist_id}" %> of your change(s).
