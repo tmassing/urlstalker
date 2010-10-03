@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100816191730) do
+ActiveRecord::Schema.define(:version => 20101003035835) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20100816191730) do
     t.integer  "user_id"
     t.string   "visit_frequency", :default => "daily"
     t.string   "git_sha"
+    t.boolean  "enabled",         :default => true
   end
 
 end

@@ -5,14 +5,16 @@
     %th Name
     %th Url
     %th Query
-    %th Action
+    %th Enabled?
 
   - @victim_urls.each do |victim_url|
     %tr
       %td= link_to victim_url.name, victim_url
-      %td= link_to victim_url.url, victim_url.url, :target => "_new"
+      %td= link_to truncate(victim_url.url), victim_url.url, :title => victim_url.url, :target => "_new"
       %td= victim_url.query
-      %td= link_to 'Destroy', victim_url, :confirm => 'Are you sure?', :method => :delete
+      %td= victim_url.enabled?
+  
+      
 
 %br
 

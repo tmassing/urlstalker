@@ -8,6 +8,9 @@
   %b Query:
   = @victim_url.query
 %p
+  %b Enabled?:
+  = @victim_url.enabled?
+%p
   %b Visits:
   = @victim_url.visit_frequency
 - unless @victim_url.gist_id.blank?
@@ -19,6 +22,7 @@
 %ul.nav
   %li= link_to 'Edit', edit_victim_url_path(@victim_url)
   %li= link_to 'Back', victim_urls_path
+  %li= link_to 'Destroy', @victim_url, :confirm => 'Are you sure?', :method => :delete
 
 %pre
   %code.html
