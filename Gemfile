@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta4'
+gem 'rails', '3.0.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,7 +13,7 @@ gem 'rails3-generators'
 gem "compass", ">= 0.10.1"
 gem "heroku"
 # gem "devise", "1.1.1"
-gem "devise", "1.1.rc2"
+gem "devise", "1.1.2"
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -15,7 +15,7 @@ module Urlstalker
 
     # Add additional load paths for your own custom dirs
     # Added as a fix for Rails 3 release candidate change
-    # config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/lib)
 
 
     # Only load the plugins named here, in the order given (default is alphabetical).

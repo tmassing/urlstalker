@@ -4,3 +4,12 @@ log/*.log
 tmp/**/*
 tmp/*
 Gemfile.lock
+.DS_Store
+bin/
+log/
+config/database.yml
+db/*.sqlite3
+tags
+TAGS
+.bundle
+vendor/ruby
