@@ -26,19 +26,14 @@ class VictimUrl < ActiveRecord::Base
   def check_for_updates
     if self.enabled?
       self.publish_gist
-      if File.exist?("tmp/gists/#{self.gist_id}")
-        g = Git.open("tmp/gists/#{self.gist_id}")
-        g.remote("origin").fetch
-        g.remote("origin").merge
-      else
-        g = Git.clone("git://gist.github.com/#{self.gist_id}.git","tmp/gists/#{self.gist_id}")
-      end
+      output = `git ls-remote git://gist.github.com/#{self.gist_id}.git`
+      sha = output.split("\t").first
       if self.git_sha.nil?
-        self.git_sha = g.object('HEAD').sha
+        self.git_sha = sha
         self.save
-      elsif self.git_sha != g.object('HEAD').sha
+      elsif self.git_sha != sha
         logger.info "Updating SHA...something has changed"
-        self.git_sha = g.object('HEAD').sha
+        self.git_sha = sha
         self.save
         StalkerMailer.look_whos_stalking(self).deliver
       end
