@@ -12,3 +12,4 @@ tags
 TAGS
 .bundle
 vendor/ruby
+config/initializers/github.rb
